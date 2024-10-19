@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<title>API News app</title>
+<h1>API News App</h1>
+    <div>
+        {% for article in articles %}
+        <div class = 'col'>
+            <div>
+                {% if article.urlToImage %}
+                <img src = "{{article.urlToImage}}" alt ="">
+                {% endif%}
+            </div>
+            <div>
+                <h3><a href="{{article.url}}">{{article.title}}</a></h3>
+                <p>{{article.description}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
